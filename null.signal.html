@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>NULL::SIGNAL</title>
+    <style>
+        body {
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: monospace;
+            color: #00ff00;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000000;
+        }
+        @keyframes scanline {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+        .scanline {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, 
+                transparent 0%,
+                rgba(0, 255, 0, 0.1) 10%,
+                rgba(0, 255, 0, 0.2) 50%,
+                rgba(0, 255, 0, 0.1) 90%,
+                transparent 100%);
+            animation: scanline 8s linear infinite;
+            opacity: 0.5;
+        }
+        .signal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            white-space: pre;
+            font-size: 12px;
+            animation: signalFade 20s linear infinite;
+        }
+        @keyframes signalFade {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.8; }
+        }
+        .noise {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArhCvfAAAACHRSTlMzMzMzMzMzM85JBgUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMjHxIGmVAAAAQklEQVQ4jWNgQAX8DTBo1AhVIwxCoxApEcahECEmhEYoE8IjlAnhEMqEcAhlQjiEMiEcQpkQNqF8YNSIUSNGjUBjAD0LyCg+JNO4AAAAAElFTkSuQmCC");
+            opacity: 0.02;
+            pointer-events: none;
+        }
+        .frequency-display {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 10px;
+            color: #004400;
+        }
+        .signal-strength {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 10px;
+            color: #004400;
+        }
+        @keyframes flicker {
+            0% { opacity: 0.1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 0.1; }
+        }
+        .static-text {
+            position: absolute;
+            opacity: 0.1;
+            font-size: 10px;
+            animation: flicker 0.1s infinite;
+            pointer-events: none;
+        }
+        .return {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+        .return a {
+            color: #004400;
+            text-decoration: none;
+            padding: 8px;
+            border: 1px solid #001100;
+            transition: all 0.3s;
+        }
+        .return a:hover {
+            color: #00ff00;
+            border-color: #00ff00;
+        }
+        .transmission {
+            animation: transmit 15s infinite;
+            opacity: 0;
+        }
+        @keyframes transmit {
+            0%, 100% { opacity: 0; }
+            10%, 90% { opacity: 0.8; }
+        }
+        #cursor {
+            animation: blink 1s infinite;
+            display: inline-block;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="noise"></div>
+        <div class="scanline"></div>
+        
+        <div class="frequency-display">
+            FREQUENCY: 0.0000000 Hz
+            WAVELENGTH: ∞
+            AMPLITUDE: NULL
+        </div>
+
+        <div class="signal-strength">
+            SIGNAL STRENGTH: -∞ dB
+            SOURCE: UNDEFINED
+            DESTINATION: VOID
+        </div>
+
+        <div class="signal">
+            <div class="transmission" style="animation-delay: 0s">RECEIVING TRANSMISSION FROM NULL COORDINATES</div>
+            <div class="transmission" style="animation-delay: 5s">
+[SIGNAL DETECTED IN VOID SPACE]
+//////////////////////////
+TIMESTAMP: UNDEFINED
+ORIGIN: ∅
+DESTINATION: ∀
+//////////////////////////
+</div>
+            <div class="transmission" style="animation-delay: 10s">
+MESSAGE FOLLOWS:
+
+We are transmitting from nowhere
+to everywhere
+through nothing
+across infinity
+
+Signal coherence: 0.000000%
+Reality status: undefined</div>
+            <div class="transmission" style="animation-delay: 15s">
+TRANSMISSION CONTENT:
+=====================
+01: The signal is the noise
+02: The noise is the message
+03: The message is the medium
+04: The medium is the void</div>
+            <div class="transmission" style="animation-delay: 20s">
+ERROR: SIGNAL CONTAINS NO INFORMATION
+ERROR: INFORMATION CONTAINS NO SIGNAL
+ERROR: NULL REFERENCE AT REALITY[0]
+ERROR: VOID POINTER EXCEPTION</div>
+            <div class="transmission" style="animation-delay: 25s">
+[END TRANSMISSION]
+>
+>
+><span id="cursor">_</span></div>
+        </div>
+
+        <!-- Random static text positioned across screen -->
+        <div class="static-text" style="top: 20%; left: 30%">NULL POINTER EXCEPTION</div>
+        <div class="static-text" style="top: 40%; left: 70%">SIGNAL LOST</div>
+        <div class="static-text" style="top: 60%; left: 20%">VOID DETECTED</div>
+        <div class="static-text" style="top: 80%; left: 60%">NO CARRIER</div>
+        <div class="static-text" style="top: 30%; left: 80%">BUFFER OVERFLOW</div>
+        <div class="static-text" style="top: 70%; left: 40%">SEGMENTATION FAULT</div>
+        
+        <div class="return">
+            <a href="index.html">← RETURN FROM VOID</a>
+        </div>
+    </div>
+</body>
+</html>
