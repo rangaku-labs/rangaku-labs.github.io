@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>ERR0R:://:V01D</title>
+    <style>
+        body {
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: monospace;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            color: #001100;
+            position: relative;
+        }
+        .glitch {
+            font-size: 12px;
+            letter-spacing: 2px;
+            animation: glitch 1s infinite;
+            position: relative;
+            white-space: pre-wrap;
+        }
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-2px, -2px); }
+            80% { transform: translate(2px, 2px); }
+            100% { transform: translate(0); }
+        }
+        .error-text {
+            margin: 20px 0;
+            opacity: 0.5;
+        }
+        .back {
+            margin-top: 40px;
+        }
+        .back a {
+            color: #001100;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 1px;
+            padding: 10px;
+            border: 1px solid #001100;
+            transition: all 0.3s;
+        }
+        .back a:hover {
+            color: #00ff00;
+            border-color: #00ff00;
+        }
+        .noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.1;
+            animation: noise 8s steps(10) infinite;
+        }
+        @keyframes noise {
+            0% { transform: translate(0,0) }
+            10% { transform: translate(-5%,-5%) }
+            20% { transform: translate(-10%,5%) }
+            30% { transform: translate(5%,-10%) }
+            40% { transform: translate(-5%,15%) }
+            50% { transform: translate(-10%,5%) }
+            60% { transform: translate(15%,0) }
+            70% { transform: translate(0,10%) }
+            80% { transform: translate(-15%,0) }
+            90% { transform: translate(10%,5%) }
+            100% { transform: translate(5%,0) }
+        }
+    </style>
+</head>
+<body>
+    <div class="noise"></div>
+    <div class="container">
+        <div class="glitch">
+ERROR: ACCESSING UNDEFINED MEMORY SEGMENT
+LOCATION: 0x000000[REDACTED]
+STATUS: BUFFER OVERFLOW
+REALITY ANCHOR: LOST
+DIMENSIONAL COORDINATES: NULL
+
+[DATA EXPUNGED]
+
+/ / / UNAUTHORIZED ACCESS DETECTED / / /</div>
+        <div class="error-text">
+            This node should not exist.
+        </div>
+        <div class="back">
+            <a href="descend.html">← RETURN</a>
+        </div>
+    </div>
+</body>
+</html>
