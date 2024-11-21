@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>入::GATE</title>
+    <style>
+        body {
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: monospace;
+            color: #00ff00;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000000;
+        }
+        .kanji {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 400px;
+            color: #001100;
+            opacity: 0.1;
+            animation: pulse 4s infinite;
+            font-family: "MS Mincho", serif;
+            pointer-events: none;
+        }
+        .small-kanji {
+            position: absolute;
+            font-family: "MS Mincho", serif;
+            color: #001100;
+            opacity: 0.15;
+            animation: float 10s infinite ease-in-out;
+            pointer-events: none;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(10px, -10px) rotate(5deg); }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.1; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.2; transform: translate(-50%, -50%) scale(1.05); }
+        }
+        .ripple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 2px;
+            height: 2px;
+            background: transparent;
+            border: 1px solid #001100;
+            border-radius: 50%;
+            animation: ripple 4s linear infinite;
+        }
+        .hex-ripple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 2px;
+            height: 2px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            border: 1px solid #001100;
+            animation: ripple 6s linear infinite;
+        }
+        @keyframes ripple {
+            0% { 
+                width: 2px;
+                height: 2px;
+                opacity: 1;
+            }
+            100% { 
+                width: 500px;
+                height: 500px;
+                opacity: 0;
+            }
+        }
+        .terminal {
+            position: absolute;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #001100;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        .gate-1 {
+            top: 20%;
+            left: 20%;
+            transform: rotate(-2deg);
+        }
+        .gate-2 {
+            top: 30%;
+            right: 20%;
+            transform: rotate(2deg);
+        }
+        .gate-3 {
+            bottom: 25%;
+            left: 25%;
+            transform: rotate(1deg);
+        }
+        .gate-4 {
+            bottom: 30%;
+            right: 25%;
+            transform: rotate(-1deg);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 0.4; }
+        }
+        .sequence {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        .sequence-1 { animation-delay: 1s; }
+        .sequence-2 { animation-delay: 3s; }
+        .sequence-3 { animation-delay: 5s; }
+        .sequence-4 { animation-delay: 7s; }
+        
+        .return {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            gap: 20px;
+        }
+        .return a {
+            color: #004400;
+            text-decoration: none;
+            padding: 8px;
+            border: 1px solid #001100;
+            transition: all 0.3s;
+        }
+        .return a:hover {
+            color: #00ff00;
+            border-color: #00ff00;
+        }
+        .matrix-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            opacity: 0.1;
+        }
+        .matrix-column {
+            position: absolute;
+            top: -20px;
+            font-family: "MS Mincho", serif;
+            font-size: 14px;
+            line-height: 1;
+            animation: rain linear infinite;
+            color: #001100;
+        }
+        @keyframes rain {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="kanji">入</div>
+        
+        <!-- Additional floating kanji -->
+        <div class="small-kanji" style="top: 15%; left: 25%; font-size: 40px;">空</div>
+        <div class="small-kanji" style="top: 25%; right: 20%; font-size: 30px;">無</div>
+        <div class="small-kanji" style="bottom: 30%; left: 15%; font-size: 35px;">道</div>
+        <div class="small-kanji" style="bottom: 20%; right: 25%; font-size: 45px;">門</div>
+        
+        <!-- Matrix-style rain effect -->
+        <div class="matrix-rain" id="matrix-rain"></div>
+
+        <div class="ripple"></div>
+        <div class="ripple" style="animation-delay: 1s"></div>
+        <div class="ripple" style="animation-delay: 2s"></div>
+        <div class="hex-ripple" style="animation-delay: 0.5s"></div>
+        <div class="hex-ripple" style="animation-delay: 1.5s"></div>
+        <div class="hex-ripple" style="animation-delay: 2.5s"></div>
+
+        <div class="terminal gate-1 sequence sequence-1">
+            入 [NYUU] - To enter
+            門 [MON] - The gate
+            道 [DOU] - The way
+            空 [KUU] - The void
+            無 [MU] - Nothingness
+
+            [ INITIATING THRESHOLD CROSSING ]
+        </div>
+
+        <div class="terminal gate-2 sequence sequence-2">
+            Reality.Layer.Access {
+                permeability: quantum;
+                dimension: n+1;
+                boundary: permeable;
+                consciousness: expanded;
+                void_status: resonant;
+            }
+        </div>
+
+        <div class="terminal gate-3 sequence sequence-3">
+            ACCESSING DEEPER LAYER
+            ----------------------
+            > Consciousness coherence: 93.7%
+            > Reality anchor: destabilized
+            > Void resonance: detected
+            > Quantum state: superposed
+            > Dimensional shift: imminent
+        </div>
+
+        <div class="terminal gate-4 sequence sequence-4">
+            WARNING: METAPHYSICAL BOUNDARY BREACH
+            ------------------------------------
+            Reality layers merging
+            Consciousness expanding
+            Void gates opening
+            [TRANSMISSION FOLLOWS]
+            なにもない から なにもかも へ
+            From nothing to everything
+        </div>
+
+        <div class="return">
+            <a href="hypermetanoia.html">← RETURN TO SURFACE</a>
+            <a href="void-protocols.html">PROCEED DEEPER →</a>
+        </div>
+    </div>
+
+    <script>
+        // Enhanced Matrix rain with hidden messages
+        function createMatrixRain() {
+            const container = document.querySelector('.matrix-rain');
+            // Extended character set with hidden meanings
+            const characters = '門入無空道観想識真理悟道無限永遠輪廻光闇境界超越';
+            const hiddenMessages = [
+                '悟りを開く', // Spiritual awakening
+                '空即是色', // Form is emptiness
+                '道無門', // The gateless gate
+                '実相無相' // True form is formless
+            ];
+            const columns = Math.floor(window.innerWidth / 20);
+            
+            for (let i = 0; i < columns; i++) {
+                const column = document.createElement('div');
+                column.className = 'matrix-column';
+                column.style.left = i * 20 + 'px';
+                column.style.animationDuration = (Math.random() * 2 + 1) + 's';
+                
+                // Randomly insert hidden messages
+                if (Math.random() < 0.1) {
+                    const message = hiddenMessages[Math.floor(Math.random() * hiddenMessages.length)];
+                    const padding = Array.from({length: 15}, () => 
+                        characters[Math.floor(Math.random() * characters.length)]).join('\n');
+                    column.textContent = padding + '\n' + message + '\n' + padding;
+                    column.style.opacity = '0.15'; // Slightly more visible
+                } else {
+                    column.textContent = Array.from({length: 20}, () => 
+                        characters[Math.floor(Math.random() * characters.length)]).join('\n');
+                }
+                container.appendChild(column);
+            }
+        }
+
+        // Recreate rain periodically to keep it fresh
+        createMatrixRain();
+        setInterval(() => {
+            document.querySelector('.matrix-rain').innerHTML = '';
+            createMatrixRain();
+        }, 10000);
+    </script>
+</body>
+</html>
