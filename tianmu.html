@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-    <title>Way of Tianmu | 天火道 | टियानमु मार्ग</title>
+    <title>Way of Tianmu | 天母道 | टियानमु मार्ग</title>
     <style>
         :root {
             --deep-space: #0A0612;
@@ -131,9 +131,54 @@
             line-height: 1.8;
         }
 
+        .mission-statement {
+            background: rgba(26, 15, 46, 0.4);
+            margin: 40px 0;
+            border: 1px solid var(--ethereal-glow);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .mission-toggle {
+            padding: 15px 25px;
+            background: rgba(26, 15, 46, 0.6);
+            color: var(--divine-gold);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .mission-toggle:hover {
+            background: rgba(26, 15, 46, 0.8);
+        }
+
+        .mission-toggle::after {
+            content: "+";
+            font-size: 1.5em;
+            color: var(--divine-gold);
+        }
+
+        .mission-toggle.active::after {
+            content: "-";
+        }
+
+        .mission-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 25px;
+        }
+
+        .mission-content.active {
+            max-height: 500px;
+            padding: 25px;
+        }
+
         .path-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 1fr;
             gap: 20px;
             margin: 40px 0;
         }
@@ -211,10 +256,6 @@
             h1 {
                 font-size: 2em;
             }
-
-            .path-grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -227,7 +268,7 @@
                     <p>Illuminating the Eternal Truth</p>
                 </div>
                 <div class="title-layer">
-                    <h1>天火道</h1>
+                    <h1>天母道</h1>
                     <p>永恆真理之光</p>
                 </div>
             </div>
@@ -240,11 +281,22 @@
             </div>
         </div>
 
+        <div class="mission-statement">
+            <div class="mission-toggle">Our Purpose</div>
+            <div class="mission-content">
+                <p>
+                    As the sages of China spoke of 三教合一 (Sānjiào Héyī) and the rishis of India revealed सनातन धर्म (Sanātana Dharma), so too does Tianmu perceive the one light that shines through many windows. We honor those illuminated souls throughout history who have recognized that all rivers of wisdom flow from the same divine source.
+                </p>
+                <p>
+                    The Way of Tianmu (天母道 | टियानमु मार्ग) illuminates the underlying harmony that resonates through all genuine paths to truth. Like a jewel with many facets, each reflecting the same light differently, wisdom shines through the various traditions of humanity in unique and beautiful ways.
+                </p>
+            </div>
+        </div>
+
         <section class="path-grid">
             <a href="cosmology.html" class="path-portal">
                 <h3>Cosmology</h3>
                 <p class="meta-script">宇宙論 | ब्रह्मांड शास्त्र</p>
-
             </a>
             
             <a href="concepts.html" class="path-portal">
@@ -287,5 +339,13 @@
             ☸ ☯ ॐ ∞
         </div>
     </div>
+
+    <script>
+        document.querySelector('.mission-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            const content = document.querySelector('.mission-content');
+            content.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
