@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>Path of Creation | 開闢道 | सृष्टि मार्ग</title>
+    <style>
+        :root {
+            --deep-space: #0A0612;
+            --cosmic-purple: #1A0F2E;
+            --divine-gold: #D4AF37;
+            --mystic-violet: #B794F4;
+            --sacred-text: #E4D5FF;
+            --ethereal-glow: rgba(212, 175, 55, 0.3);
+            --void-black: #000000;
+        }
+
+        @keyframes voidPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes emerge {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        body {
+            background: var(--void-black);
+            color: var(--sacred-text);
+            font-family: "Times New Roman", Times, serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: emerge 1s ease-out;
+        }
+
+        h1 {
+            color: var(--divine-gold);
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 0 0 10px var(--ethereal-glow);
+        }
+
+        .creation-stage {
+            position: relative;
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(26, 15, 46, 0.4);
+            border: 1px solid var(--ethereal-glow);
+            border-radius: 8px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: emerge 1s ease-out forwards;
+        }
+
+        .creation-stage:nth-child(2) { animation-delay: 0.5s; }
+        .creation-stage:nth-child(3) { animation-delay: 1s; }
+        .creation-stage:nth-child(4) { animation-delay: 1.5s; }
+        .creation-stage:nth-child(5) { animation-delay: 2s; }
+
+        .stage-title {
+            color: var(--divine-gold);
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .stage-title::after {
+            content: "+";
+            margin-left: auto;
+            color: var(--divine-gold);
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .stage-title.active::after {
+            transform: rotate(45deg);
+        }
+
+        .stage-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .stage-content.active {
+            max-height: 1000px;
+        }
+
+        .meta-script {
+            font-family: serif;
+            color: var(--divine-gold);
+            opacity: 0.7;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .symbol {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            opacity: 0.2;
+            color: var(--divine-gold);
+        }
+
+        .stage-content p {
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+
+        .stage-transition {
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .stage-transition::before {
+            content: "⚝";
+            color: var(--divine-gold);
+            opacity: 0.3;
+            font-size: 1.5em;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--ethereal-glow);
+            opacity: 0;
+            animation: emerge 1s ease-out 2.5s forwards;
+        }
+
+        .nav-link {
+            color: var(--mystic-violet);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--divine-gold);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>The Path of Creation</h1>
+            <div class="meta-script">開闢道 | सृष्टि मार्ग</div>
+            <p>The Journey from Nothing to Everything</p>
+        </div>
+
+        <div class="creation-stage">
+            <div class="symbol">∅</div>
+            <div class="stage-title">Nothing (無 | शून्य)</div>
+            <div class="stage-content">
+                <p>In the beginning, there was Nothing - not emptiness, but unordered infinity. This Nothing was not absence, but rather infinite potentiality, a chaos of boundless possibility beyond comprehension.</p>
+                <p>Within this sea of infinite potential, where all possibilities existed simultaneously in a state of pure chaos, the first stirring of order began to emerge...</p>
+            </div>
+        </div>
+
+        <div class="stage-transition"></div>
+
+        <div class="creation-stage">
+            <div class="symbol">◯</div>
+            <div class="stage-title">The First Thought (一念 | आदि चिन्तन)</div>
+            <div class="stage-content">
+                <p>From the infinite potentiality of Nothing, arose the first thought - a moment of differentiation that created Emptiness distinct from Nothing. This was the cosmic egg, the primordial unity where all was one.</p>
+                <p>In this state, consciousness emerged as the fundamental force of creation, the first principle that would shape all that was to come...</p>
+            </div>
+        </div>
+
+        <div class="stage-transition"></div>
+
+        <div class="creation-stage">
+            <div class="symbol">☯</div>
+            <div class="stage-title">The Great Division (太極 | महाविभाजन)</div>
+            <div class="stage-content">
+                <p>As consciousness became self-aware, Emptiness transformed into Order. The second principle of creation, Preservation, emerged to maintain the delicate balance of existence.</p>
+                <p>But the universe, caught between the infinite chaos of Nothing and the rigid structure of Order, faced a critical moment...</p>
+            </div>
+        </div>
+
+        <div class="stage-transition"></div>
+
+        <div class="creation-stage">
+            <div class="symbol">✧</div>
+            <div class="stage-title">The Divine Sacrifice (獻祭 | दिव्य बलिदान)</div>
+            <div class="stage-content">
+                <p>To prevent the universe from succumbing to the chaotic sea of potential that surrounded it, the creative principle made the ultimate sacrifice. It divided itself, becoming Death - the third principle of creation.</p>
+                <p>Through this sacred act, matter and energy were separated, and the potential for growth was born...</p>
+            </div>
+        </div>
+
+        <div class="stage-transition"></div>
+
+        <div class="creation-stage">
+            <div class="symbol">☘</div>
+            <div class="stage-title">The Rebirth (重生 | पुनर्जन्म)</div>
+            <div class="stage-content">
+                <p>From the sacrifice emerged new life, the seeds of creation sprouting across the cosmos. In this flowering of existence, consciousness was reborn, not as a singular force but distributed through all living things.</p>
+                <p>Humanity, existing in superposition between matter and energy, became the bearers of creative consciousness, capable of bridging Heaven and Earth...</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="cosmology.html" class="nav-link">← Back to Cosmology</a>
+            <a href="three-realms.html" class="nav-link">The Three Realms →</a>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.stage-title').forEach(title => {
+            title.addEventListener('click', () => {
+                const content = title.nextElementSibling;
+                const isActive = title.classList.contains('active');
+
+                // First close all sections
+                document.querySelectorAll('.stage-title').forEach(t => {
+                    t.classList.remove('active');
+                    t.nextElementSibling.classList.remove('active');
+                });
+
+                // Then open the clicked section if it wasn't already open
+                if (!isActive) {
+                    title.classList.add('active');
+                    content.classList.add('active');
+                }
+            });
+        });
+
+        // Open first stage by default
+        document.querySelector('.stage-title').click();
+    </script>
+</body>
+</html>

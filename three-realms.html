@@ -1,0 +1,340 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>The Three Realms | 三界 | त्रैलोक्य</title>
+    <style>
+        :root {
+            --deep-space: #0A0612;
+            --cosmic-purple: #1A0F2E;
+            --divine-gold: #D4AF37;
+            --mystic-violet: #B794F4;
+            --sacred-text: #E4D5FF;
+            --ethereal-glow: rgba(212, 175, 55, 0.3);
+            --material-red: #4a1111;
+            --energy-blue: #112442;
+            --human-green: #1a421a;
+        }
+
+        @keyframes shiftRealms {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes floatSymbol {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 20px var(--ethereal-glow); }
+            50% { box-shadow: 0 0 40px var(--ethereal-glow); }
+        }
+
+        body {
+            background: var(--deep-space);
+            color: var(--sacred-text);
+            font-family: "Times New Roman", Times, serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .realm-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                var(--material-red) 0%,
+                var(--energy-blue) 50%,
+                var(--human-green) 100%
+            );
+            opacity: 0.1;
+            animation: shiftRealms 20s infinite;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            color: var(--divine-gold);
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 0 0 10px var(--ethereal-glow);
+        }
+
+        .realm-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .realm-portal {
+            position: relative;
+            padding: 30px;
+            border: 1px solid var(--ethereal-glow);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .realm-portal::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            transition: opacity 0.3s;
+        }
+
+        .realm-portal.heaven::before {
+            background: var(--energy-blue);
+        }
+
+        .realm-portal.earth::before {
+            background: var(--human-green);
+        }
+
+        .realm-portal.hell::before {
+            background: var(--material-red);
+        }
+
+        .realm-portal:hover {
+            transform: translateY(-5px);
+            animation: glowPulse 2s infinite;
+        }
+
+        .realm-portal:hover::before {
+            opacity: 0.2;
+        }
+
+        .realm-symbol {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2em;
+            opacity: 0.3;
+            animation: floatSymbol 4s infinite ease-in-out;
+        }
+
+        .realm-title {
+            color: var(--divine-gold);
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .meta-script {
+            color: var(--divine-gold);
+            opacity: 0.7;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .realm-description {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--ethereal-glow);
+        }
+
+        .realm-description.active {
+            display: block;
+        }
+
+        .realm-connections {
+            position: relative;
+            height: 60px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .connection-line {
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                transparent,
+                var(--ethereal-glow),
+                transparent
+            );
+        }
+
+        .realm-intersection {
+            text-align: center;
+            padding: 30px;
+            margin: 40px 0;
+            background: rgba(26, 15, 46, 0.4);
+            border: 1px solid var(--ethereal-glow);
+            border-radius: 8px;
+        }
+
+        .meditation-prompt {
+            font-style: italic;
+            color: var(--mystic-violet);
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--ethereal-glow);
+        }
+
+        .nav-link {
+            color: var(--mystic-violet);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--divine-gold);
+        }
+
+        /* Modal for deep realm exploration */
+        .realm-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: var(--deep-space);
+            border: 1px solid var(--ethereal-glow);
+            border-radius: 8px;
+            color: var(--sacred-text);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: var(--divine-gold);
+            cursor: pointer;
+            font-size: 1.5em;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="realm-overlay"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>The Three Realms</h1>
+            <div class="meta-script">三界 | त्रैलोक्य</div>
+            <p>The Cosmic Structure of Reality</p>
+        </div>
+
+        <div class="realm-intersection">
+            <div class="meta-script">Contemplate the Intersection</div>
+            <p>
+                In the grand tapestry of existence, three realms interweave and interpenetrate, creating the fullness of reality. Each realm represents a different aspect of the cosmic whole, yet all are intimately connected through the mystery of consciousness.
+            </p>
+        </div>
+
+        <div class="realm-grid">
+            <div class="realm-portal heaven">
+                <div class="realm-symbol">☁</div>
+                <h2 class="realm-title">The Energy Realm (Heaven)</h2>
+                <div class="meta-script">天界 | स्वर्गलोक</div>
+                <p>The realm of pure potential, where energy exists in its most refined state. Here, all possibilities dwell in quantum superposition, awaiting manifestation.</p>
+                <div class="realm-description">
+                    <p>In this highest realm, energy and consciousness exist in their purest form. It is the source of all potential, the realm of archetypes and divine patterns. Here, thoughts and possibilities exist in perfect superposition, free from the constraints of material existence.</p>
+                    <div class="meditation-prompt">
+                        "Like light through crystal, pure consciousness illuminates all possibilities..."
+                    </div>
+                </div>
+            </div>
+
+            <div class="realm-connections">
+                <div class="connection-line"></div>
+            </div>
+
+            <div class="realm-portal earth">
+                <div class="realm-symbol">⚭</div>
+                <h2 class="realm-title">The Human Realm (Bridge)</h2>
+                <div class="meta-script">人界 | मनुष्यलोक</div>
+                <p>The realm of conscious bridging, where humanity exists in sacred superposition between energy and matter.</p>
+                <div class="realm-description">
+                    <p>Humans exist in a unique state of superposition between Heaven and Earth, Material and Energy. Through consciousness, we bridge these realms, capable of drawing forth energy into matter and elevating matter through conscious intent.</p>
+                    <div class="meditation-prompt">
+                        "In the center of the cosmic wheel, we are the hub where all realms meet..."
+                    </div>
+                </div>
+            </div>
+
+            <div class="realm-connections">
+                <div class="connection-line"></div>
+            </div>
+
+            <div class="realm-portal hell">
+                <div class="realm-symbol">⬢</div>
+                <h2 class="realm-title">The Material Realm (Hell)</h2>
+                <div class="meta-script">地界 | भूलोक</div>
+                <p>The realm of manifestation, where energy crystallizes into form and potential becomes actual.</p>
+                <div class="realm-description">
+                    <p>This is the realm of physical manifestation, where energy takes form and possibilities collapse into actuality. Though often seen as the densest realm, it holds its own profound beauty - the divine made tangible, the abstract made real.</p>
+                    <div class="meditation-prompt">
+                        "In the dance of atoms, witness the echo of celestial harmonies..."
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="creation-path.html" class="nav-link">← Path of Creation</a>
+            <a href="sacred-geometry.html" class="nav-link">Sacred Mathematics →</a>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.realm-portal').forEach(portal => {
+            portal.addEventListener('click', () => {
+                const description = portal.querySelector('.realm-description');
+                description.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
