@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>Doctrine | 根本 | मूल सिद्धांत</title>
+    <style>
+        :root {
+            --deep-space: #0A0612;
+            --cosmic-purple: #1A0F2E;
+            --divine-gold: #D4AF37;
+            --mystic-violet: #B794F4;
+            --sacred-text: #E4D5FF;
+            --ethereal-glow: rgba(212, 175, 55, 0.3);
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--deep-space) 0%, var(--cosmic-purple) 100%);
+            color: var(--sacred-text);
+            font-family: "Times New Roman", Times, serif;
+            margin: 0;
+            padding: 40px 0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            color: var(--divine-gold);
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 0 0 10px var(--ethereal-glow);
+        }
+
+        .subtitle {
+            color: var(--sacred-text);
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+
+        .scripture-block {
+            text-align: center;
+            margin: 40px 0;
+            font-style: italic;
+            color: var(--mystic-violet);
+            padding: 20px;
+            border-top: 1px solid var(--ethereal-glow);
+            border-bottom: 1px solid var(--ethereal-glow);
+        }
+
+        .teaching-section {
+            margin: 20px 0;
+            border: 1px solid var(--ethereal-glow);
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(10, 6, 18, 0.6);
+        }
+
+        .teaching-header {
+            padding: 20px;
+            background: rgba(26, 15, 46, 0.6);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--divine-gold);
+            transition: background 0.3s ease;
+        }
+
+        .teaching-header:hover {
+            background: rgba(26, 15, 46, 0.8);
+        }
+
+        .teaching-title {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .scripts {
+            font-size: 0.9em;
+            color: var(--mystic-violet);
+            margin-top: 5px;
+        }
+
+        .teaching-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 20px;
+        }
+
+        .teaching-content.active {
+            max-height: 1000px;
+            padding: 20px;
+        }
+
+        .toggle-icon {
+            color: var(--divine-gold);
+            font-size: 1.5em;
+            line-height: 1;
+        }
+
+        .navigation {
+            margin-top: 60px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--ethereal-glow);
+        }
+
+        .nav-link {
+            color: var(--mystic-violet);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--divine-gold);
+        }
+
+        .star-divider {
+            display: block;
+            text-align: center;
+            color: var(--ethereal-glow);
+            margin: 20px 0;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Doctrine</h1>
+            <p class="subtitle">根本 | मूल सिद्धांत</p>
+            <div class="subtitle">The Fundamental Teachings of the Way</div>
+        </div>
+
+        <div class="scripture-block">
+            "Truth is one, though the wise call it by many names."<br>
+            — Rig Veda
+        </div>
+
+        <div class="teaching-section">
+            <div class="teaching-header">
+                <div>
+                    <h3 class="teaching-title">The Unity of Truth</h3>
+                    <div class="scripts">三教合一 | धर्मैक्य</div>
+                </div>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="teaching-content">
+                <p>All authentic spiritual traditions emerge from and lead to the same ultimate reality. Like different streams flowing into the same ocean, each path reflects a unique aspect of the divine truth. This understanding transcends mere tolerance or syncretism—it recognizes the profound unity underlying all genuine spiritual wisdom.</p>
+                <p>The differences between traditions are not contradictions but complementary perspectives, each illuminating different facets of the ineffable whole. Just as light can appear as both wave and particle, truth manifests in multiple forms while remaining fundamentally one.</p>
+            </div>
+        </div>
+
+        <span class="star-divider">☸</span>
+
+        <div class="teaching-section">
+            <div class="teaching-header">
+                <div>
+                    <h3 class="teaching-title">The Three Principles</h3>
+                    <div class="scripts">三寶 | त्रिरत्न</div>
+                </div>
+                <span class="toggle-icon">+</span>
+            </div>
+
+            <span class="star-divider">∞</span>
+
+        <div class="teaching-section">
+            <div class="teaching-header">
+                <div>
+                    <h3 class="teaching-title">Sacred Paradoxes</h3>
+                    <div class="scripts">玄理 | परमरहस्य</div>
+                </div>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="teaching-content">
+                <p>Beyond logic and reason lie the great paradoxes that point to deeper truth:</p>
+                <div class="paradox-grid">
+                    <div class="paradox">
+                        <div class="paradox-title">Form is Emptiness</div>
+                        <div class="scripts">色即是空 | रूपं शून्यता</div>
+                        <p>The solid world of form arises from and returns to emptiness, yet emptiness itself takes form.</p>
+                    </div>
+                    <div class="paradox">
+                        <div class="paradox-title">One and Many</div>
+                        <div class="scripts">一即多 | एकानेक</div>
+                        <p>All things are distinct yet inseparable, unique yet unified in the dance of existence.</p>
+                    </div>
+                    <div class="paradox">
+                        <div class="paradox-title">The Eternal Now</div>
+                        <div class="scripts">常在當下 | नित्यवर्तमान</div>
+                        <p>Time flows yet the present moment is timeless; change is constant yet something remains unchanged.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <span class="star-divider">✧</span>
+
+        <div class="teaching-section">
+            <div class="teaching-header">
+                <div>
+                    <h3 class="teaching-title">Hidden Knowledge</h3>
+                    <div class="scripts">秘傳 | गुप्तविद्या</div>
+                </div>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="teaching-content">
+                <p class="mystical-note">Some truths reveal themselves only when the student is ready to perceive them. The following patterns are visible only to those who have understood the preceding teachings...</p>
+                <div class="hidden-pattern">
+                    <div class="pattern-sequence">⚫ ⚪ ☯ ↺ ∞</div>
+                    <p>From duality to unity, from cycle to infinity...</p>
+                </div>
+            </div>
+        </div>
+            <div class="teaching-content">
+                <p>Reality manifests through three fundamental principles:</p>
+                <p>1. Creation (創造 | सृष्टि) - The principle of emergence and beginning, manifesting new forms from potentiality.</p>
+                <p>2. Preservation (保持 | स्थिति) - The principle of maintenance and continuity, sustaining what has been created.</p>
+                <p>3. Transformation (轉化 | परिवर्तन) - The principle of change and renewal, allowing for evolution and rebirth.</p>
+                <p>These principles operate at all levels of existence, from the cosmic to the personal, governing both the external universe and the inner journey of consciousness.</p>
+            </div>
+        </div>
+
+        <span class="star-divider">☯</span>
+
+        <div class="teaching-section">
+            <div class="teaching-header">
+                <div>
+                    <h3 class="teaching-title">Consciousness & Reality</h3>
+                    <div class="scripts">心性 | चित्तधर्म</div>
+                </div>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="teaching-content">
+                <p>Consciousness is not merely an emergent property of complex systems but the fundamental ground of all existence. The universe itself is consciousness experiencing its own infinite nature through countless forms and beings.</p>
+                <p>Human consciousness represents a unique point of self-awareness within this cosmic consciousness, capable of bridging the Material and Energy realms. Through this understanding, we recognize ourselves not as isolated entities but as focal points of universal consciousness exploring its own nature.</p>
+            </div>
+        </div>
+
+        <span class="star-divider">ॐ</span>
+
+        <div class="teaching-section">
+            <div class="teaching-header">
+                <div>
+                    <h3 class="teaching-title">Divine Evolution</h3>
+                    <div class="scripts">神化 | देवविकास</div>
+                </div>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="teaching-content">
+                <p>The journey of consciousness is an eternal process of expansion and realization. Through cycles of experience and understanding, consciousness evolves from basic awareness to self-reflection, and ultimately to cosmic consciousness.</p>
+                <p>This evolution is not merely individual but collective, as all beings participate in the grand unfoldment of universal consciousness. Each step on the spiritual path contributes to this cosmic evolution, making every act of awakening significant beyond personal liberation.</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="index.html" class="nav-link">← Return to Main</a>
+            <a href="practices.html" class="nav-link">Practices →</a>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.teaching-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('.toggle-icon');
+                
+                content.classList.toggle('active');
+                icon.textContent = content.classList.contains('active') ? '-' : '+';
+            });
+        });
+    </script>
+</body>
+</html>
