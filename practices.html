@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>Practices | 修行 | साधना</title>
+    <style>
+        :root {
+            --deep-space: #0A0612;
+            --cosmic-purple: #1A0F2E;
+            --divine-gold: #D4AF37;
+            --mystic-violet: #B794F4;
+            --sacred-text: #E4D5FF;
+            --ethereal-glow: rgba(212, 175, 55, 0.3);
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--deep-space) 0%, var(--cosmic-purple) 100%);
+            color: var(--sacred-text);
+            font-family: "Times New Roman", Times, serif;
+            margin: 0;
+            padding: 40px 0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            color: var(--divine-gold);
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 0 0 10px var(--ethereal-glow);
+        }
+
+        .subtitle {
+            color: var(--sacred-text);
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+
+        .opening-quote {
+            text-align: center;
+            margin: 40px auto;
+            max-width: 600px;
+            font-style: italic;
+            color: var(--mystic-violet);
+            padding: 20px;
+            border-top: 1px solid var(--ethereal-glow);
+            border-bottom: 1px solid var(--ethereal-glow);
+        }
+
+        .practice-section {
+            margin: 20px 0;
+            border: 1px solid var(--ethereal-glow);
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(10, 6, 18, 0.6);
+        }
+
+        .section-header {
+            padding: 20px;
+            background: rgba(26, 15, 46, 0.6);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .section-header:hover {
+            background: rgba(26, 15, 46, 0.8);
+        }
+
+        .section-title {
+            color: var(--divine-gold);
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .scripts {
+            font-size: 0.9em;
+            color: var(--mystic-violet);
+            margin-top: 5px;
+        }
+
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 20px;
+        }
+
+        .section-content.active {
+            max-height: 2000px;
+            padding: 20px;
+        }
+
+        .star-divider {
+            display: block;
+            text-align: center;
+            color: var(--ethereal-glow);
+            margin: 20px 0;
+            font-size: 0.8em;
+        }
+
+        .navigation {
+            margin-top: 60px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--ethereal-glow);
+        }
+
+        .nav-link {
+            color: var(--mystic-violet);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--divine-gold);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Practices</h1>
+            <p class="subtitle">修行 | साधना</p>
+            <div class="subtitle">The Ways of Transformation</div>
+        </div>
+
+        <div class="opening-quote">
+            "The path is both the means and the end; in walking it, we embody what we seek."
+        </div>
+
+        <div class="practice-section">
+            <div class="section-header">
+                <div>
+                    <h3 class="section-title">Meditation</h3>
+                    <div class="scripts">禪修 | ध्यान</div>
+                </div>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="section-content">
+                <p>The foundation of all practice is the cultivation of awareness and insight through meditation. Through stillness, we discover motion; through silence, we hear truth.</p>
+                <ul>
+                    <li>Breath Awareness - The gateway practice</li>
+                    <li>Void Contemplation - Insight into emptiness</li>
+                    <li>Unity Practice - Direct experience of non-duality</li>
+                </ul>
+            </div>
+        </div>
+
+        <span class="star-divider">✧</span>
+
+        <div class="practice-section">
+            <div class="section-header">
+                <div>
+                    <h3 class="section-title">Creative Practice</h3>
+                    <div class="scripts">藝道 | कला साधना</div>
+                </div>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="section-content">
+                <p>Creation is the most sacred act, mirroring the divine process itself. Through conscious creation, we participate in the eternal unfolding of reality.</p>
+                <ul>
+                    <li>Sacred Writing - Expression of wisdom</li>
+                    <li>Ritual Arts - Ceremonial practices</li>
+                    <li>Divine Mathematics - Exploration of cosmic patterns</li>
+                </ul>
+            </div>
+        </div>
+
+        <span class="star-divider">✧</span>
+
+        <div class="practice-section">
+            <div class="section-header">
+                <div>
+                    <h3 class="section-title">Study & Contemplation</h3>
+                    <div class="scripts">研修 | स्वाध्याय</div>
+                </div>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="section-content">
+                <p>Knowledge becomes wisdom through deep contemplation and direct experience. Study is not mere accumulation but transformation of understanding.</p>
+                <ul>
+                    <li>Scripture Study - Engaging with sacred texts</li>
+                    <li>Comparative Analysis - Understanding unity in diversity</li>
+                    <li>Contemplative Inquiry - Direct investigation of reality</li>
+                </ul>
+            </div>
+        </div>
+
+        <span class="star-divider">✧</span>
+
+        <div class="practice-section">
+            <div class="section-header">
+                <div>
+                    <h3 class="section-title">Service & Action</h3>
+                    <div class="scripts">實踐 | कर्म योग</div>
+                </div>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="section-content">
+                <p>True understanding manifests as compassionate action. We serve all beings by recognizing our fundamental unity with them.</p>
+                <ul>
+                    <li>Compassionate Service - Active care for others</li>
+                    <li>Conscious Work - Mindful engagement in daily tasks</li>
+                    <li>Environmental Stewardship - Care for our world</li>
+                </ul>
+            </div>
+        </div>
+
+        <span class="star-divider">✧</span>
+
+        <div class="practice-section">
+            <div class="section-header">
+                <div>
+                    <h3 class="section-title">Hidden Practice</h3>
+                    <div class="scripts">密行 | गुह्य साधना</div>
+                </div>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="section-content">
+                <p>Some practices reveal themselves only through dedication to the path. The deepest teachings emerge naturally when the student is ready.</p>
+                <div style="text-align: center; margin: 20px 0; color: var(--mystic-violet);">
+                    ⟟ ⟟ ⟟ ⟟ ⟟
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="doctrine.html" class="nav-link">← Doctrine</a>
+            <a href="living.html" class="nav-link">Daily Life →</a>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.section-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('.toggle-icon');
+                
+                content.classList.toggle('active');
+                icon.textContent = content.classList.contains('active') ? '-' : '+';
+            });
+        });
+    </script>
+</body>
+</html>
